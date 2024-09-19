@@ -11,9 +11,14 @@
 
         for ($i = 0; $i <= 50; $i++){
             $array[$i] = rand(0,99);
-            
+            do {
+                if(isset($array[$i]) == $array[$i - 1]){
+                    $array[$i]= rand(0,99);
+                }
+            } while (isset($array[$i]) == $array[$i - 1]);
         }
-    
+        sort($array);
+        print_r($array);
     ?>
 </body>
 </html>
